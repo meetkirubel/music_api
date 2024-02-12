@@ -12,9 +12,8 @@ const dbURI = 'mongodb+srv://test:test1234@cluster0.vnpghy9.mongodb.net/songsApi
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const corsOptions = {
-  origin: '*', // Replace with your domain
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Specify allowed methods
-  credentials: true, // Allow cookies when using credentials
+  origin: 'http://localhost:3000/',
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 };
 
 app.use(cors(corsOptions));
