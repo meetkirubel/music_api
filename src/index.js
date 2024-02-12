@@ -11,12 +11,11 @@ const dbURI = 'mongodb+srv://test:test1234@cluster0.vnpghy9.mongodb.net/songsApi
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(router)
 const corsOptions = {
     origin: 'http://localhost:3000/',
     methods: ['GET', 'POST','PUT','PATCH','DELETE'], 
     credentials: true,
   };
-  
   app.use(cors(corsOptions));
+app.use(router)
 mongoose.connect(dbURI).then(app.listen(PORT,()=>{console.log("DB conected and Listening On Port 3000.")})).catch((err)=>console.log(err));
