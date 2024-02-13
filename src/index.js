@@ -17,5 +17,5 @@ origin: '*',  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 
 app.use(cors(corsOptions));
 
-app.use(router)
+app.use(cors(),router)
 mongoose.connect(dbURI).then(app.listen(PORT,()=>{console.log("DB conected and Listening On Port 3000.")})).catch((err)=>console.log(err));
