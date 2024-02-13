@@ -21,7 +21,7 @@ router.use('/api/v1/genres',genresRoute)
 
 
 router.use((req, res ,next) => {
-    return res.status(404).json({msg: 'page not found.',status: 404,success: false})
+    return res.status(404).json({message:'page not found.',status: 404,success: false})
     next();
   });
 
